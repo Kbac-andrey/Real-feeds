@@ -1,0 +1,25 @@
+.nav-menu {
+  background-color: #546f7a;
+}
+.logo {
+   color: #10b2e5;
+}
+.logo:hover {
+  color: #10b2e5 !important;
+}
+.logo:focus {
+  color: #10b2e5 !important;
+}
+.nav-menu-list {
+
+}
+.nav-menu-item {
+  margin: 0 10px 0 0;
+}
+.nav-menu-link {
+  color: white !important;
+  text-transform: uppercase;
+}
+.nav-menu-link:hover {
+  color: #10b2e5 !important;
+}

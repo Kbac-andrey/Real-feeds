@@ -1,0 +1,19 @@
+<div class="home-page">
+  <mat-tab-group dynamicHeight>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div fxLayout="column" fxLayoutAlign="start center">
+          <span class="tab-link">News</span>
+        </div>
+      </ng-template>
+      <app-news-list> </app-news-list>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div fxLayout="column" fxLayoutAlign="start center">
+          <span class="tab-link">Add News</span>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
