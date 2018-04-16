@@ -1,20 +1,31 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12" id="News-info " *ngFor="let author of news">
-      <div>
+    <div id="News-info"  *ngFor="let author of news">
+      <div class="author-info">
         <div class="block-photo col-md-4">
           <img src="{{author.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">
         </div>
-        <div class="block-worker-info col-md-4">
-          <div class="sub-block-worker-info">
+        <div class="block-worker-info col-md-4 text-center">
+          <div class="sub-block-worker-info block-Auth-info-text">
             <span class="worker-name">{{author.name}} {{author.lastName}}</span>
           </div>
         </div>
         <div class="block-worker-info col-md-4">
-          <div class="sub-block-worker-info">
+          <div class="sub-block-worker-info block-Auth-info-text text-right" >
             <span class="worker-name">{{author.dataforpost | date:'longDate'}}</span>
           </div>
         </div>
+      </div>
+      <div class="news-info-text">
+        <div class="block-news">
+          <h1 class="title-news text-center">{{author.title}}</h1>
+        </div>
+        <div class="news-text">
+          <p class="body-news">
+            {{author.lorem}}
+          </p>
+        </div>
+        <hr class="line-after-block">
       </div>
     </div>
     <!--<div class="block-worker-info col-md-4 col-sm-2">-->
@@ -38,3 +49,4 @@
       <!--</div>-->
     <!--</div>-->
   </div>
+</div>
