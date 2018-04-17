@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div id="News-info"  *ngFor="let author of news">
-      <div class="author-info">
+      <div class="author-info" *ngIf="author.lorem">
         <div class="block-photo col-md-4">
           <img src="{{author.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">
         </div>

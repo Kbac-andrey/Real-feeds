@@ -1,0 +1,28 @@
+.form-restration {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+.create-link {
+  color: #10b2e5 !important;
+}
+.create-link:hover {
+  text-decoration: none;
+}
+.form-log {
+  color: #10b2e5;
+}
+.form-group {
+  margin-top: 20px;
+}
+.btn-regestration {
+  margin-top: 20px;
+}
+.impt-text {
+  padding-top: 10px;
+  color: red;
+}
+#inputavatar {
+  width: 203px;
+}
