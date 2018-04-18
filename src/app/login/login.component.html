@@ -3,6 +3,9 @@
     <h1 class="h3 mb-4 font-weight-normal form-log">Thank that you visit our site again</h1>
     <p>If you dont have account  <a routerLink="/registration" class="mt-5 mb-3 text-muted text-center create-link">create now!</a></p>
   </div>
+  <div *ngIf="errorMessage" class="text-center mb-4">
+    <h1 class="h3 mb-4 font-weight-normal form-log">не смог войти </h1>
+  </div>
   <div class="form-group">
     <label for="inputLogName">Name:</label>
     <input type="text" class="form-control" placeholder="Yours name" name="name" id="inputLogName" ngModel required>
