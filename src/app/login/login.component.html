@@ -3,16 +3,16 @@
     <h1 class="h3 mb-4 font-weight-normal form-log">Thank that you visit our site again</h1>
     <p>If you dont have account  <a routerLink="/registration" class="mt-5 mb-3 text-muted text-center create-link">create now!</a></p>
   </div>
-  <div *ngIf="errorMessage" class="text-center mb-4">
-    <h1 class="h3 mb-4 font-weight-normal form-log">не смог войти </h1>
+  <div *ngIf="errorMessage" class="text-center mb-5">
+    <h2 class="h3 mb-4 font-weight-normal text-danger">Sorry You put wrong information, try again...</h2>
   </div>
   <div class="form-group">
     <label for="inputLogName">Name:</label>
     <input type="text" class="form-control" placeholder="Yours name" name="name" id="inputLogName" ngModel required>
   </div>
   <div class="form-group">
-    <label for="inputLoglastName">last name:</label>
-    <input type="text" class="form-control" placeholder="put Yours last name" name="lastName" id="inputLoglastName" ngModel required>
+    <label for="inputLogPassword">Password:</label>
+    <input type="password" class="form-control" placeholder="Yours Password" name="password" id="inputLogPassword" ngModel required>
   </div>
 <button class="btn btn-lg btn-primary btn-block btn-log" type="submit">Sign in</button>
 </form>
