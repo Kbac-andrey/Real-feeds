@@ -11,6 +11,7 @@ module.exports = function () {
         avatar: faker.internet.avatar(),
         country: faker.address.country(),
         phoneNumber: faker.phone.phoneNumber(),
+        password: faker.internet.password(),
         lorem: faker.lorem.paragraphs(),
         title: faker.lorem.slug(),
         dataforpost: faker.date.recent(),
