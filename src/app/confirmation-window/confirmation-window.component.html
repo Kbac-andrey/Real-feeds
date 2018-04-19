@@ -1,0 +1,5 @@
+<h1 mat-dialog-title>You are ready to exit ?</h1>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()" class="no-confirm-btn">No Thanks</button>
+  <button mat-raised-button color="accent" [mat-dialog-close]="" cdkFocusInitial (click)="onYESClick()" class="yes-confirm-btn">Ok</button>
+</div>

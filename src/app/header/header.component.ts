@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {ConfirmationWindowComponent} from '../confirmation-window/confirmation-window.component';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +12,10 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService, private http: HttpClient, private router: Router) { }
-  LogOut() {
-    window.localStorage.removeItem('LogInUser');
-    console.log('yes, A delete key');
+  constructor(public authService: AuthService, private http: HttpClient, private router: Router, public dialog: MatDialog) { }
+  openDialog() {
+    this.dialog.open(ConfirmationWindowComponent, {
+    });
   }
   ngOnInit() {
   }
