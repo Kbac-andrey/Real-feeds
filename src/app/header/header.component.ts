@@ -11,13 +11,17 @@ import {ConfirmationWindowComponent} from '../confirmation-window/confirmation-w
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public showLogOut: boolean = false;
 
-  constructor(public authService: AuthService, private http: HttpClient, private router: Router, public dialog: MatDialog) { }
+  constructor(public authService: AuthService, private http: HttpClient, private router: Router, public dialog: MatDialog) {
+
+  }
+
   openDialog() {
-    this.dialog.open(ConfirmationWindowComponent, {
-    });
+    this.dialog.open(ConfirmationWindowComponent, {});
   }
   ngOnInit() {
+    this.showLogOut = this.authService.isUserLoggedIn();
   }
-
 }
+

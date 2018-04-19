@@ -26,8 +26,7 @@ export class LoginComponent implements OnInit {
          this.errorMessage = true;
       } else {
         localStorage.setItem('LogInUser', JSON.stringify(user));
-        this.authService.isLoggedIn = true;
-        this.router.navigate(['']);
+        this.router.navigate(['home']);
       }
     });
     this.logUserForm.reset();

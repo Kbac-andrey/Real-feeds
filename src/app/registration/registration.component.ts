@@ -21,6 +21,7 @@ export class RegistrationComponent {
       'name':  data.name,
       'lastName': data.lastName,
       'email': data.email,
+      'password': data.password,
       'avatar': data.avatar = 'https://static.productionready.io/images/smiley-cyrus.jpg',
       'country': data.country,
       'phoneNumber': data.phoneNumber

@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {AuthService} from '../services/auth.service';
 @Component({
   selector: 'app-confirmation-window',
   templateUrl: './confirmation-window.component.html',
@@ -7,14 +8,16 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class ConfirmationWindowComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<ConfirmationWindowComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(public authService: AuthService, public dialogRef: MatDialogRef<ConfirmationWindowComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {}
   onNoClick(): void {
     this.dialogRef.close();
   }
   onYESClick(): void {
     window.localStorage.removeItem('LogInUser');
+    this.authService.isUserLoggedIn();
   }
   ngOnInit() {
+
   }
 
 }
