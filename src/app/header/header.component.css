@@ -23,3 +23,6 @@
 .nav-menu-link:hover {
   color: #10b2e5 !important;
 }
+.logout-pointer {
+  cursor: pointer;
+}

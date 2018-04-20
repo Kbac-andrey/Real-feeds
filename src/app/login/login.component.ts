@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class LoginComponent implements OnInit {
  public user: any;
  public errorMessage: boolean = false;
+ public StatusMessage: boolean = true;
   @ViewChild('logUserForm') logUserForm: NgForm;
   constructor( private http: HttpClient, public authService: AuthService, private router: Router) { }
   LogInUser(data): void {
@@ -20,13 +21,11 @@ export class LoginComponent implements OnInit {
       userPassword: data.password
     };
     this.authService.getLoginusers(this.user.userName, this.user.userPassword).subscribe(user =>  {
-      console.log(data)
-      console.log(user)
       if (user.length === 0 || user == null) {
          this.errorMessage = true;
       } else {
         localStorage.setItem('LogInUser', JSON.stringify(user));
-        this.authService.isLoggedIn = true;
+        this.authService.setStatusMessage(this.StatusMessage)
         this.router.navigate(['']);
       }
     });

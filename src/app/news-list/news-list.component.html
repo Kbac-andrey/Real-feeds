@@ -3,7 +3,7 @@
     <div id="News-info"  *ngFor="let author of news">
       <div class="author-info" *ngIf="author.lorem">
         <div class="block-photo col-md-4">
-          <img src="{{author.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">
+          <img src="{{author.avatar}}" routerLink="/user/{{author.id}}" alt="ava" class="rounded-circle avatar border border-primary">
         </div>
         <div class="block-worker-info col-md-4 text-center">
           <div class="sub-block-worker-info block-Auth-info-text">
@@ -28,25 +28,5 @@
         <hr class="line-after-block">
       </div>
     </div>
-    <!--<div class="block-worker-info col-md-4 col-sm-2">-->
-      <!--<div class="sub-block-worker-info">-->
-        <!--<span class="worker-name">{{user.name}} {{user.lastName}}</span>-->
-      <!--</div>-->
-      <!--<div class="sub-block-worker-info">-->
-        <!--<span class="worker-name">{{user.stack}}</span>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="block-worker-info col-12 col-sm-5">-->
-      <!--<div class="sub-block-worker-info">-->
-        <!--<span class="email-icon"><mat-icon >email</mat-icon></span>-->
-        <!--<span class="worker-name">{{user.email}}</span>-->
-      <!--</div>-->
-      <!--<div class="sub-block-worker-info">-->
-            <!--<span class="email-icon">-->
-              <!--<mat-icon >phone</mat-icon>-->
-            <!--</span>-->
-        <!--<span class="worker-name">{{user.phoneNumber}}</span>-->
-      <!--</div>-->
-    <!--</div>-->
   </div>
 </div>
