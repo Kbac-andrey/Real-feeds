@@ -22,6 +22,7 @@ import {AuthService} from './services/auth.service';
 import { CommonModule } from '@angular/common';
 import { LocalStorageModule } from '@ngx-pwa/local-storage';
 import { ConfirmationWindowComponent } from './confirmation-window/confirmation-window.component';
+import { UserAreaComponent } from './user-area/user-area.component';
 
 
 
@@ -34,6 +35,7 @@ import { ConfirmationWindowComponent } from './confirmation-window/confirmation-
     LoginComponent,
     NewsListComponent,
     ConfirmationWindowComponent,
+    UserAreaComponent,
   ],
   entryComponents: [ConfirmationWindowComponent],
   imports: [
@@ -53,6 +55,7 @@ import { ConfirmationWindowComponent } from './confirmation-window/confirmation-
       { path: '',  component: HomeComponent},
       { path: 'login', component: LoginComponent},
       { path: 'registration', component: RegistrationComponent},
+      { path: 'user/:id', component: UserAreaComponent},
       { path: 'home', redirectTo: 'HomeComponent'}
     ])
   ],

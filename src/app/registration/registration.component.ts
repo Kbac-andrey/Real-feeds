@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 export class RegistrationComponent {
   user: object = {};
+  public StatusMessage: boolean = true;
 
   @ViewChild('newUserForm') newUserForm: NgForm;
 
@@ -26,9 +27,13 @@ export class RegistrationComponent {
       'country': data.country,
       'phoneNumber': data.phoneNumber
     };
-
-    this.authService.regestrationUser(this.user).subscribe(user => this.user = data);
+    this.authService.regestrationUser(this.user).subscribe(user => {
+      this.user = data
+      localStorage.setItem('LogInUser', JSON.stringify(user));
+      this.authService.setStatusMessage(this.StatusMessage)
+    });
     this.newUserForm.reset();
+    this.router.navigate(['user-info']);
   }
 }
 
