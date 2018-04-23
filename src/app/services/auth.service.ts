@@ -22,9 +22,11 @@ export class AuthService {
   setStatusMessage(value: boolean) {
     this.isLoggedIn.next(value);
   }
-  findallLoginUsers(): string[] {
+  findgetLoggedUser(): string[] {
     if (localStorage.getItem('LogInUser') != null) {
       return JSON.parse(localStorage.getItem('LogInUser'));
+    } else {
+      return [];
     }
   }
 }
