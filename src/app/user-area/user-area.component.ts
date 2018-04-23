@@ -13,12 +13,17 @@ export class UserAreaComponent implements OnInit {
   userId: number;
   user: object = {};
   private routeSubscription: Subscription;
-  constructor(private authService: AuthService, private activateRoute: ActivatedRoute, private http: HttpClient) {
+  constructor(private authService: AuthService,
+              private activateRoute: ActivatedRoute,
+              private http: HttpClient) {
     this.routeSubscription = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
 
   ngOnInit() {
     this.authService.getUserById(this.userId).subscribe(user => {
+      // console.log(user)
+      // console.log(this.userId)
+      // console.log(this.user)
       this.user = user;
     });
   }

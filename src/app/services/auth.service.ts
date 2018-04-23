@@ -16,12 +16,16 @@ export class AuthService {
   getUserById(userId) {
     return this.http.get('http://localhost:3000/users/' + userId);
   }
-
   isUserLoggedIn(): boolean {
     return localStorage.getItem('LogInUser') != null;
   }
   setStatusMessage(value: boolean) {
     this.isLoggedIn.next(value);
+  }
+  findallLoginUsers(): string[] {
+    if (localStorage.getItem('LogInUser') != null) {
+      return JSON.parse(localStorage.getItem('LogInUser'));
+    }
   }
 }
 

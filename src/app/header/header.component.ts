@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
       this.showLogOut = value;
     });
     this.showLogOut = this.authService.isUserLoggedIn();
+
   }
 }
 
