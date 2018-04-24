@@ -4,9 +4,10 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class AuthService {
- // public isLoggedIn: boolean;
   public isLoggedIn = new Subject<boolean>();
+
   constructor(private http: HttpClient ) {}
+
   regestrationUser(user) {
     return this.http.post('http://localhost:3000/users ', user);
   }

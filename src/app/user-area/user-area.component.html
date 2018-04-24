@@ -1,21 +1,21 @@
     <div id="personal-info">
       <div class="author-info">
-        <div class="block-photo col-md-2 text-center">
+        <div class="block-photo col-md-2 col-lg-2 text-center">
           <img src="{{user.avatar}}" routerLink="/user/{{user.id}}" alt="ava" class="rounded-circle avatar border border-primary">
         </div>
         <div class="block-worker-info col-md-3 text-center">
-          <div class="sub-block-worker-info block-Auth-info-text">
+          <div class="sub-block-worker-info block-Auth-info-text Auth-info-name-lastname" >
             <span class="worker-name">{{user.name}} {{user.lastName}}</span>
           </div>
         </div>
-        <div class="block-worker-info col-md-3">
-          <div class="sub-block-worker-info block-Auth-info-text text-right">
+        <div class="block-worker-info col-md-3 col-lg-3">
+          <div class="sub-block-worker-info block-Auth-info-text Auth-info-email text-right">
             <span class="email-icon"><mat-icon class="email-icon">email</mat-icon></span>
             <span class="worker-name">{{user.email}}</span>
           </div>
         </div>
-        <div class="block-worker-info col-md-4">
-          <div class="sub-block-worker-info block-Auth-info-text text-right">
+        <div class="block-worker-info col-md-4 col-lg-4">
+          <div class="sub-block-worker-info block-Auth-info-text Auth-info-phone  text-right">
             <span class="email-icon"><mat-icon class="email-icon">phone</mat-icon></span>
             <span class="worker-name">{{user.phoneNumber}}</span>
           </div>

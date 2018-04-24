@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-registration',
@@ -10,15 +11,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 
 export class RegistrationComponent {
-  userId: number;
-  user: object = {};
+  public userId: number;
+  public user: any;
+  public usersCollection: any = [];
   public StatusMessage: boolean = true;
-
   @ViewChild('newUserForm') newUserForm: NgForm;
 
-  constructor(public authService: AuthService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, public authService: AuthService, private router: Router, private route: ActivatedRoute) { }
 
-  regestrationNewUser(data) {
+  regestrationNewUser(data): void {
     this.user = {
       'name':  data.name,
       'lastName': data.lastName,
@@ -29,13 +30,13 @@ export class RegistrationComponent {
       'phoneNumber': data.phoneNumber,
     };
     this.authService.regestrationUser(this.user).subscribe(user => {
-      this.user = data
-      this.userId = user['id']
-      localStorage.setItem('LogInUser', JSON.stringify(user));
-      this.authService.setStatusMessage(this.StatusMessage);
-      this.router.navigate(
-        ['/user', this.userId]);
-      this.newUserForm.reset();
+        this.user = data;
+        this.userId = user['id']
+        this.usersCollection.push(user)
+        localStorage.setItem('LogInUser', JSON.stringify(this.usersCollection));
+        this.authService.setStatusMessage(this.StatusMessage);
+        this.router.navigate(['/user', this.userId]);
+        this.newUserForm.reset();
     });
   }
 }

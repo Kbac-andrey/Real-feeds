@@ -5,9 +5,11 @@
 }
 .block-Auth-info-text {
   padding-top: 50px;
+  color: white;
 }
 .email-icon {
   vertical-align: bottom;
+  color: white;
 }
 #personal-info {
   background-color: #563d7c;
@@ -56,11 +58,23 @@
     padding-top: 0;
   }
 }
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .block-worker-info {
-    text-align: center !important;
+@media (min-width: 768px) and (max-width: 1208px) {
+  .block-photo{
+    text-align: left !important;
   }
   .email-icon {
     display: none;
+  }
+  .block-Auth-info-text {
+    text-align: left !important;
+  }
+  .Auth-info-email {
+    text-align: left !important;
+   }
+  .Auth-info-phone {
+    text-align: right !important;
+  }
+  .Auth-info-name-lastname {
+    text-align: center !important;
   }
 }

@@ -15,23 +15,27 @@ export class HeaderComponent implements OnInit{
   public showLogOut: boolean = false;
   logInuser: string[] = [];
   logInuserId: number;
-  private routeSubscription: Subscription;
+
   constructor(public authService: AuthService, private http: HttpClient, private router: Router,  public dialog: MatDialog) {
   }
 
   openDialog() {
     this.dialog.open(ConfirmationWindowComponent, {});
   }
-  ngOnInit() {
-    this.authService.isLoggedIn.subscribe(value => {
-      this.showLogOut = value;
-    });
-    this.showLogOut = this.authService.isUserLoggedIn();
+  getUserIsLoggedInId () {
     this.logInuser = this.authService.findgetLoggedUser();
     for (let i = 0; i < this.logInuser.length; i++) {
       this.logInuserId = this.logInuser[i]['id'];
       console.log(this.logInuserId);
     }
+  }
+  ngOnInit() {
+    this.authService.isLoggedIn.subscribe(value => {
+      this.showLogOut = value;
+      this.getUserIsLoggedInId();
+    });
+    this.showLogOut = this.authService.isUserLoggedIn();
+    this.getUserIsLoggedInId();
   }
 }
 
