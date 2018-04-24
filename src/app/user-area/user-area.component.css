@@ -1,3 +1,4 @@
+/*user-info*/
 .author-info {
   display: flex;
   padding-top: 40px;
@@ -14,6 +15,45 @@
 #personal-info {
   background-color: #563d7c;
 }
+/*user-info*/
+
+/*more details*/
+/*::ng-deep .mat-tab-label, .mat-tab-link {*/
+  /*color: #10b2e5 !important;*/
+/*}*/
+::ng-deep .mat-tab-label {
+  font-family: Lato;
+  font-weight: bold;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+::ng-deep .mat-tab-label-active {
+  color: #3f51b5 !important;
+}
+.title-details-date-posts {
+  margin-top: 20px!important;
+  font-size: 20px;
+  color: #455A64;
+}
+.title-details-post {
+  font-size: 15px;
+  color: #263238;
+}
+.label-details-country {
+  color: #212121 !important;
+}
+.details-country {
+  color: #FF7043 !important;
+  font-size: 18px;
+}
+.line-after-block {
+  color: #3f51b5;
+  border-top: 1px solid  #3f51b5;
+  background-color: #3f51b5;
+  width: 100%;
+}
+
+
 @media (max-width: 575.98px) {
   .author-info {
     display: block;

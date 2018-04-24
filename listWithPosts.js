@@ -10,11 +10,13 @@ module.exports = function () {
         email: faker.internet.email(),
         avatar: faker.internet.avatar(),
         country: faker.address.country(),
+        city: faker.address.city(),
         phoneNumber: faker.phone.phoneNumber(),
         password: faker.internet.password(),
         lorem: faker.lorem.paragraphs(),
         title: faker.lorem.slug(),
         dataforpost: faker.date.recent(),
+        dateOfBirth: faker.date.past()
       }
     })
   }
