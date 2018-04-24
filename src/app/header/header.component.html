@@ -14,8 +14,8 @@
       <li class="nav-item nav-menu-item" *ngIf="showLogOut">
         <a class="nav-link nav-menu-link logout-pointer" (click)="openDialog()">Log out</a>
       </li>
-      <li class="nav-item nav-menu-item">
-        <a class="nav-link nav-menu-link logout-pointer">Personal area</a>
+      <li class="nav-item nav-menu-item" *ngIf="showLogOut">
+        <a class="nav-link nav-menu-link logout-pointer" routerLink="user/{{logInuserId}}">Personal area</a>
       </li>
     </ul>
   </div>

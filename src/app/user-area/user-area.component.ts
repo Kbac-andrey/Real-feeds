@@ -10,13 +10,13 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./user-area.component.css']
 })
 export class UserAreaComponent implements OnInit {
-  userId: number;
-  user: object = {};
+  public userId: number;
+  public user: object = {};
   private routeSubscription: Subscription;
-  constructor(private authService: AuthService, private activateRoute: ActivatedRoute, private http: HttpClient) {
+
+  constructor(private authService: AuthService, private activateRoute: ActivatedRoute) {
     this.routeSubscription = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
-
   ngOnInit() {
     this.authService.getUserById(this.userId).subscribe(user => {
       this.user = user;

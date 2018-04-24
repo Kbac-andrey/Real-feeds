@@ -13,8 +13,10 @@ export class LoginComponent implements OnInit {
  public user: any;
  public errorMessage: boolean = false;
  public StatusMessage: boolean = true;
-  @ViewChild('logUserForm') logUserForm: NgForm;
+ @ViewChild('logUserForm') logUserForm: NgForm;
+
   constructor( private http: HttpClient, public authService: AuthService, private router: Router) { }
+
   LogInUser(data): void {
     this.user = {
       userName:  data.name,

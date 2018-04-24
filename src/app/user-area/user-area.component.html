@@ -1,42 +1,38 @@
-<div class="wrap">
-  <div class="container-fluid">
-    <div class="litle-inform row">
-      <div class="block-photo col-12 col-sm-2">
-        <img src="{{user.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">
-      </div>
-      <div class="block-worker-info col-12 col-sm-5">
-        <div class="sub-block-worker-info">
-          <span class="worker-name">{{user.name}} {{user.lastName}}</span>
+    <div id="personal-info">
+      <div class="author-info">
+        <div class="block-photo col-md-2 col-lg-2 text-center">
+          <img src="{{user.avatar}}" routerLink="/user/{{user.id}}" alt="ava" class="rounded-circle avatar border border-primary">
         </div>
-        <div class="sub-block-worker-info">
-          <span class="worker-name">{{user.stack}}</span>
+        <div class="block-worker-info col-md-3 text-center">
+          <div class="sub-block-worker-info block-Auth-info-text Auth-info-name-lastname" >
+            <span class="worker-name">{{user.name}} {{user.lastName}}</span>
+          </div>
         </div>
-      </div>
-      <div class="block-worker-info col-12 col-sm-5">
-        <div class="sub-block-worker-info">
-          <span class="email-icon"><mat-icon >email</mat-icon></span>
-          <span class="worker-name">{{user.email}}</span>
+        <div class="block-worker-info col-md-3 col-lg-3">
+          <div class="sub-block-worker-info block-Auth-info-text Auth-info-email text-right">
+            <span class="email-icon"><mat-icon class="email-icon">email</mat-icon></span>
+            <span class="worker-name">{{user.email}}</span>
+          </div>
         </div>
-        <div class="sub-block-worker-info">
-            <span class="email-icon">
-              <mat-icon >phone</mat-icon>
-            </span>
-          <span class="worker-name">{{user.phoneNumber}}</span>
+        <div class="block-worker-info col-md-4 col-lg-4">
+          <div class="sub-block-worker-info block-Auth-info-text Auth-info-phone  text-right">
+            <span class="email-icon"><mat-icon class="email-icon">phone</mat-icon></span>
+            <span class="worker-name">{{user.phoneNumber}}</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="more-inform">
-      <mat-card>
-        <mat-card-content>
-          <mat-tab-group class="demo-tab-group">
-            <mat-tab class="label-info" label="WORK DETAILS">
-              <div class="demo-tab-content">
-                <div class="details-group">
-                  <span class="title-details-group">Base Location:</span>
-                  <span class="result-details-group">{{user.country}}</span>
+      <div class="more-inform">
+        <mat-card>
+          <mat-card-content>
+            <mat-tab-group class="demo-tab-group">
+              <mat-tab class="label-info" label="WORK DETAILS">
+                <div class="demo-tab-content">
+                  <div class="details-group">
+                    <span class="title-details-group">Base Location:</span>
+                    <span class="result-details-group">{{user.country}}</span>
+                   </div>
                 </div>
-              </div>
-            </mat-tab>
+              </mat-tab>
             <mat-tab class="label-info" label="CAREER DETAILS">
               <div class="demo-tab-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
@@ -55,9 +51,77 @@
                 orci enim rutrum enim, vel tempor sapien arcu a tellus.
               </div>
             </mat-tab>
-          </mat-tab-group>
-        </mat-card-content>
-      </mat-card>
+            </mat-tab-group>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
-  </div>
-</div>
+
+
+
+
+
+
+<!--<div class="wrap">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="litle-inform row">-->
+      <!--<div class="block-photo col-12 col-sm-2">-->
+        <!--<img src="{{user.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">-->
+      <!--</div>-->
+      <!--<div class="block-worker-info col-12 col-sm-5">-->
+        <!--<div class="sub-block-worker-info">-->
+          <!--<span class="worker-name">{{user.name}} {{user.lastName}}</span>-->
+        <!--</div>-->
+        <!--<div class="sub-block-worker-info">-->
+          <!--<span class="worker-name">{{user.stack}}</span>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="block-worker-info col-12 col-sm-5">-->
+        <!--<div class="sub-block-worker-info">-->
+          <!--<span class="email-icon"><mat-icon >email</mat-icon></span>-->
+          <!--<span class="worker-name">{{user.email}}</span>-->
+        <!--</div>-->
+        <!--<div class="sub-block-worker-info">-->
+            <!--<span class="email-icon">-->
+              <!--<mat-icon >phone</mat-icon>-->
+            <!--</span>-->
+          <!--<span class="worker-name">{{user.phoneNumber}}</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="more-inform">-->
+      <!--<mat-card>-->
+        <!--<mat-card-content>-->
+          <!--<mat-tab-group class="demo-tab-group">-->
+            <!--<mat-tab class="label-info" label="WORK DETAILS">-->
+              <!--<div class="demo-tab-content">-->
+                <!--<div class="details-group">-->
+                  <!--<span class="title-details-group">Base Location:</span>-->
+                  <!--<span class="result-details-group">{{user.country}}</span>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</mat-tab>-->
+            <!--<mat-tab class="label-info" label="CAREER DETAILS">-->
+              <!--<div class="demo-tab-content">-->
+                <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.-->
+                <!--Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.-->
+                <!--In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,-->
+                <!--feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,-->
+                <!--orci enim rutrum enim, vel tempor sapien arcu a tellus.-->
+              <!--</div>-->
+            <!--</mat-tab>-->
+            <!--<mat-tab class="label-info" label="ACTIVITY">-->
+              <!--<div class="demo-tab-content">-->
+                <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.-->
+                <!--Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.-->
+                <!--In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,-->
+                <!--feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,-->
+                <!--orci enim rutrum enim, vel tempor sapien arcu a tellus.-->
+              <!--</div>-->
+            <!--</mat-tab>-->
+          <!--</mat-tab-group>-->
+        <!--</mat-card-content>-->
+      <!--</mat-card>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
