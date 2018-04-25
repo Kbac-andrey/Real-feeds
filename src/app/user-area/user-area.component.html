@@ -58,39 +58,38 @@
             </mat-tab>
             <mat-tab class="label-info" label="edit">
               <div class="demo-tab-content">
-                <form #newUserForm="ngForm" (ngSubmit)="regestrationNewUser(newUserForm.value)" class="form-restration">
+                <form #editUserForm="ngForm" (ngSubmit)="editUser(editUserForm.value)" class="form-edit">
                   <div class="form-group">
                     <label for="inputName">Name:</label>
-                    <input type="text" class="form-control" placeholder="put Yours name" name="name" id="inputName" ngModel required>
+                    <input type="text" class="form-control" placeholder="Yours name" name="name" id="inputName" [(ngModel)]="user.name" ngModel required>
                   </div>
                   <div class="form-group">
-                    <label for="inputlastName">last name:</label>
-                    <input type="text" class="form-control" placeholder="put Yours last name" name="lastName" id="inputlastName" ngModel required>
+                    <label for="inputlastName">Last name:</label>
+                    <input type="text" class="form-control" placeholder="Yours last name" name="lastName" id="inputlastName" [(ngModel)]="user.lastName" ngModel required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputdateOfBirth">Date of birth:</label>
+                    <input type="text" class="form-control" placeholder="Yours date of birth" name="dateOfBirth" id="inputdateOfBirth" [(ngModel)]="user.dateOfBirth" ngModel required>
                   </div>
                   <div class="form-group">
                     <label for="inputEmail">Email:</label>
-                    <input type="text" class="form-control" placeholder="put Yours email" name="email" id="inputEmail" ngModel required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword">Password:</label>
-                    <input type="password" class="form-control" placeholder="put Yours password" name="password" id="inputPassword" ngModel required>
-                    <p class="impt-text">It is important to log in to the site you will need to use when you log on to the site </p>
+                    <input type="text" class="form-control" placeholder="Yours email" name="email" id="inputEmail" [(ngModel)]="user.email" ngModel required>
                   </div>
                   <div class="form-group">
                     <label for="inputCountry">Country:</label>
-                    <input type="text" class="form-control" placeholder="put Yours country" id="inputCountry" name="country" ngModel required>
+                    <input type="text" class="form-control" placeholder="Yours country" id="inputCountry" name="country" [(ngModel)]="user.country" ngModel required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCity">City:</label>
+                    <input type="text" class="form-control" placeholder="Yours City" id="inputCity" name="city" [(ngModel)]="user.city" ngModel required>
                   </div>
                   <div class="form-group">
                     <label for="inputphoneNumber">Number:</label>
-                    <input type="text" class="form-control" placeholder="put Yours number" id="inputphoneNumber" name="phoneNumber" ngModel required>
+                    <input type="text" class="form-control" placeholder="Yours number" id="inputphoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber" ngModel required>
                   </div>
-                  <!--<div class="form-group">-->
-                  <!--<label for="inputavatar">Load yours Photo:</label>-->
-                  <!--<input type="file" id="inputavatar" name="avatar" ngModel required>-->
-                  <!--</div>-->
                   <div class="form-group">
                     <button class="btn btn-primary listing-button col-sm-12" type="submit" data-test="submitForm">
-                      Create Account
+                      Update Account
                     </button>
                   </div>
                 </form>
