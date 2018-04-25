@@ -52,7 +52,7 @@
               <div class="demo-tab-content form-group">
                 <p class="title-details-group title-details-date-posts">
                   <label for="details-country" class="label-details-country">Date of birth:</label>
-                  <span id="details-country" class="details-country">{{user.dateOfBirth | date:'longDate'}}</span>
+                  <span id="details-country" class="details-country">{{user.dateOfBirth | date:"MM/dd/yy"}}</span>
                 </p>
               </div>
             </mat-tab>
@@ -69,7 +69,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputdateOfBirth">Date of birth:</label>
-                    <input type="text" class="form-control" placeholder="Yours date of birth" name="dateOfBirth" id="inputdateOfBirth" [(ngModel)]="user.dateOfBirth" ngModel required>
+                    <input type="text" class="form-control" placeholder="MM/dd/yy" name="dateOfBirth" id="inputdateOfBirth" [(ngModel)]="user.dateOfBirth" ngModel required>
                   </div>
                   <div class="form-group">
                     <label for="inputEmail">Email:</label>
