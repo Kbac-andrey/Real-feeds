@@ -53,6 +53,14 @@
   width: 100%;
 }
 
+/*edit tab*/
+.form-edit {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+/*edit tab*/
 
 @media (max-width: 575.98px) {
   .author-info {
