@@ -4,6 +4,10 @@
       <div class="author-info" *ngIf="author.lorem">
         <div class="block-photo col-md-4">
           <img src="{{author.avatar}}" routerLink="/user/{{author.id}}" alt="ava" class="rounded-circle avatar border border-primary">
+          <button class="likes-btn" mat-fab (click)="toggleFavorite()">
+            <mat-icon class="heart-ico" aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            <span class="counter-likes">0</span>
+          </button>
         </div>
         <div class="block-worker-info col-md-4 text-center">
           <div class="sub-block-worker-info block-Auth-info-text">
@@ -12,7 +16,15 @@
         </div>
         <div class="block-worker-info col-md-4">
           <div class="sub-block-worker-info block-Auth-info-text text-right" >
-            <span class="worker-name">{{author.dataforpost | date:'longDate'}}</span>
+              <span class="worker-name">{{author.dataforpost | date:'longDate'}}</span>
+
+            <!--<button class="btn">-->
+              <!--[ngClass]="{ 'disabled' : isSubmitting,-->
+              <!--'btn-outline-primary': !article.favorited,-->
+              <!--'btn-primary': article.favorited }"-->
+              <!---->
+              <!--<i class="material-icons">favorite_border</i>-->
+            <!--</button>-->
           </div>
         </div>
       </div>

@@ -4,6 +4,36 @@
 }
 .block-Auth-info-text {
   padding-top: 50px;
+  vertical-align: top;
+}
+
+.likes-btn{
+  position: absolute;
+  bottom: 0;
+  top: 75px;
+  left: 105px;
+  margin: 0 auto;
+  width: 66px;
+  height: 63px;
+}
+.heart-ico {
+  font-size: 50px;
+  left: 0;
+  position: absolute;
+  margin: 0 auto;
+  right: 20px;
+  bottom: 0;
+  top: 10px;
+}
+.counter-likes {
+  position: absolute;
+  color: #10b2e5;
+  right: 0;
+  font-size: 13px;
+  top: 20px;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
 }
 .title-news {
   color: orangered;
@@ -29,10 +59,19 @@
   }
   .block-photo {
     text-align: center;
+    position: relative;
   }
   .block-Auth-info-text {
     text-align: center !important;
     padding-top: 10px;
+  }
+  .likes-btn{
+    position: absolute;
+    bottom: 0;
+    top: 76px;
+    left: 100px;
+    right: 0;
+    margin: 0 auto;
   }
   .title-news {
     font-size: 30px;

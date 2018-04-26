@@ -26,3 +26,6 @@
 .logout-pointer {
   cursor: pointer;
 }
+.exit-icon {
+  vertical-align: bottom;
+}

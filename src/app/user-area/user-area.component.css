@@ -60,6 +60,10 @@
   padding: 15px;
   margin: auto;
 }
+.title-news {
+  text-transform: uppercase;
+  color: orangered;
+}
 /*edit tab*/
 
 @media (max-width: 575.98px) {
