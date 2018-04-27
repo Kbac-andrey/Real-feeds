@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Rx';
+
 
 @Injectable()
 export class NewsService {
@@ -8,5 +10,7 @@ export class NewsService {
   fetchNews() {
     return this.http.get('http://localhost:3000/users');
   }
-
+  favorite(userId) {
+    return this.http.get('http://localhost:3000/users/' + userId);
+  }
 }

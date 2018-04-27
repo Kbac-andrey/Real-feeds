@@ -23,6 +23,7 @@ import { CommonModule } from '@angular/common';
 import { LocalStorageModule } from '@ngx-pwa/local-storage';
 import { ConfirmationWindowComponent } from './confirmation-window/confirmation-window.component';
 import { UserAreaComponent } from './user-area/user-area.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 
@@ -36,6 +37,7 @@ import { UserAreaComponent } from './user-area/user-area.component';
     NewsListComponent,
     ConfirmationWindowComponent,
     UserAreaComponent,
+    FavoriteComponent,
   ],
   entryComponents: [ConfirmationWindowComponent],
   imports: [
