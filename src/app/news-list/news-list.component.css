@@ -4,7 +4,10 @@
 }
 .block-Auth-info-text {
   padding-top: 50px;
+  vertical-align: top;
 }
+
+
 .title-news {
   color: orangered;
 }
@@ -29,10 +32,19 @@
   }
   .block-photo {
     text-align: center;
+    position: relative;
   }
   .block-Auth-info-text {
     text-align: center !important;
     padding-top: 10px;
+  }
+  .likes-btn{
+    position: absolute;
+    bottom: 0;
+    top: 76px;
+    left: 100px;
+    right: 0;
+    margin: 0 auto;
   }
   .title-news {
     font-size: 30px;

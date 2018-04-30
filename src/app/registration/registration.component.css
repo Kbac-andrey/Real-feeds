@@ -4,6 +4,10 @@
   padding: 15px;
   margin: auto;
 }
+.title-news {
+  text-transform: uppercase;
+  color: orangered;
+}
 .create-link {
   color: #10b2e5 !important;
 }

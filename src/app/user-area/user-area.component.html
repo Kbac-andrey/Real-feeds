@@ -59,6 +59,7 @@
             <mat-tab class="label-info" label="edit">
               <div class="demo-tab-content">
                 <form #editUserForm="ngForm" (ngSubmit)="editUser(editUserForm.value)" class="form-edit">
+                  <h1 class="title-news text-center">edit profile</h1>
                   <div class="form-group">
                     <label for="inputName">Name:</label>
                     <input type="text" class="form-control" placeholder="Yours name" name="name" id="inputName" [(ngModel)]="user.name" ngModel required>
