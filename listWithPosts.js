@@ -1,6 +1,7 @@
 module.exports = function () {
   var faker = require("faker");
   var _ = require("lodash");
+  var articlesn = [];
   return {
     users: _.times(15, function (n) {
       return {
@@ -13,10 +14,17 @@ module.exports = function () {
         city: faker.address.city(),
         phoneNumber: faker.phone.phoneNumber(),
         password: faker.internet.password(),
-        lorem: faker.lorem.paragraphs(),
-        title: faker.lorem.slug(),
-        dataforpost: faker.date.recent(),
-        dateOfBirth: faker.date.past()
+        // lorem: faker.lorem.paragraphs(),
+        dateOfBirth: faker.date.past(),
+        articles: _.times(22, function (titles) {
+          return {
+            idTitle: titles,
+            title: faker.lorem.slug(),
+            lorem: faker.lorem.paragraphs(),
+            dataforpost: faker.date.recent(),
+            userLikes: []
+          }
+        })
       }
     })
   }

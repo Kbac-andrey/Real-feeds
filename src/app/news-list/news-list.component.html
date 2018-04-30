@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div id="News-info"  *ngFor="let author of news">
-      <div class="author-info" *ngIf="author.lorem">
+      <div class="author-info">
         <div class="block-photo col-md-4">
           <img src="{{author.avatar}}" routerLink="/user/{{author.id}}" alt="ava" class="rounded-circle avatar border border-primary">
           <app-favorite>
@@ -15,7 +15,7 @@
         </div>
         <div class="block-worker-info col-md-4">
           <div class="sub-block-worker-info block-Auth-info-text text-right" >
-              <span class="worker-name">{{author.dataforpost | date:'longDate'}}</span>
+              <span class="worker-name">{{lastArticles.dataforpost | date:'longDate'}}</span>
 
             <!--<button class="btn">-->
               <!--[ngClass]="{ 'disabled' : isSubmitting,-->
@@ -27,13 +27,13 @@
           </div>
         </div>
       </div>
-      <div class="news-info-text">
+      <div class="news-info-text" >
         <div class="block-news">
-          <h1 class="title-news text-center">{{author.title}}</h1>
+          <h1 class="title-news text-center">{{lastArticles.title}}</h1>
         </div>
         <div class="news-text">
-          <p class="body-news">
-            {{author.lorem}}
+          <p class="body-news" >
+            {{lastArticles.lorem}}
           </p>
         </div>
         <hr class="line-after-block">

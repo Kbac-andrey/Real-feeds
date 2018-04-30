@@ -11,6 +11,8 @@ import {Router} from '@angular/router';
 })
 export class NewsListComponent implements OnInit {
   public news: object;
+  public lastArticles: object;
+  public lallArticles: Array<any>[];
   // public userId: number;
   logInuser: string[] = [];
   // CountLikes: number = 0;
@@ -38,13 +40,18 @@ export class NewsListComponent implements OnInit {
   //
   // }
 
-
-
-
   ngOnInit() {
-    this.newsService.fetchNews().subscribe(
-      data => this.news = data
-    );
+    this.newsService.fetchAllInformattion().subscribe(data => {
+      this.news = data
+      for (let key in this.news ) {
+        this.lallArticles = this.news[key]['articles']
+        this.lastArticles = this.lallArticles[this.lallArticles.length - 1];
+          console.log(this.lastArticles);
+      }
+    });
+    // this.newsService.getUserById(this.userId).subscribe(user => {
+    //   this.user = user;
+    //   this.checkUserstatus();
+    // });
   }
-
 }
