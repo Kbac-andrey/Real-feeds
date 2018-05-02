@@ -4,8 +4,7 @@
       <div class="author-info">
         <div class="block-photo col-md-4">
           <img src="{{author.avatar}}" routerLink="/user/{{author.id}}" alt="ava" class="rounded-circle avatar border border-primary">
-          <app-favorite>
-            (onToggle)="onToggleFavorite($event)"
+          <app-favorite (like)="onLike($event, lastArticles.articleId)">
           </app-favorite>
         </div>
         <div class="block-worker-info col-md-4 text-center">

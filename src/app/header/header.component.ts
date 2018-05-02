@@ -13,8 +13,8 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class HeaderComponent implements OnInit{
   public showLogOut: boolean = false;
-  logInuser: string[] = [];
-  logInuserId: number;
+  public logInuser: string[] = [];
+  public logInuserId: number;
 
   constructor(public authService: AuthService, private http: HttpClient, private router: Router,  public dialog: MatDialog) {
   }

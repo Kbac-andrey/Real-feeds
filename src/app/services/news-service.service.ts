@@ -13,8 +13,8 @@ export class NewsService {
   // getArticleById(articleId) {
   //   return this.http.get('http://localhost:3000/users/' + articleId);
   // }
-  getArticleById(articleId, userName, articleTitle): any {
-    return this.http.get(`http://localhost:3000/users?name=${userName}&idTitle=?${articleId}&title=${articleTitle}`);
+  getArticleById(articleId, userName, article): any {
+    return this.http.post(`http://localhost:3000/users?name=${userName}&idArticle=?${articleId}`, article);
   }
   // favorite(userId) {
   //   return this.http.get('http://localhost:3000/users/' + userId);
