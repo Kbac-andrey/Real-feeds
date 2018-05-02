@@ -16,9 +16,9 @@ module.exports = function () {
         password: faker.internet.password(),
         // lorem: faker.lorem.paragraphs(),
         dateOfBirth: faker.date.past(),
-        articles: _.times(22, function (titles) {
+        articles: _.times(22, function (idArticle) {
           return {
-            idTitle: titles,
+            idArticle: idArticle,
             title: faker.lorem.slug(),
             lorem: faker.lorem.paragraphs(),
             dataforpost: faker.date.recent(),
