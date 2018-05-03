@@ -4,8 +4,6 @@
       <div class="author-info">
         <div class="block-photo col-md-4">
           <img src="{{author.avatar}}" routerLink="/user/{{author.id}}" alt="ava" class="rounded-circle avatar border border-primary">
-          <app-favorite (like)="onLike($event, lastArticles.articleId)">
-          </app-favorite>
         </div>
         <div class="block-worker-info col-md-4 text-center">
           <div class="sub-block-worker-info block-Auth-info-text">
@@ -13,29 +11,38 @@
           </div>
         </div>
         <div class="block-worker-info col-md-4">
-          <div class="sub-block-worker-info block-Auth-info-text text-right" >
-              <span class="worker-name">{{lastArticles.dataforpost | date:'longDate'}}</span>
 
-            <!--<button class="btn">-->
+        </div>
+      </div>
+      <div class="news-info-text" *ngFor="let allArticles of author.articles; let i = index">
+        <div *ngIf="i == (author.articles.length-1)">
+          <div class="block-news">
+            <h1 class="title-news text-center">{{allArticles.title}}</h1>
+          </div>
+          <div class="news-text">
+            <p class="body-news" >
+              {{allArticles.lorem}}
+            </p>
+          </div>
+          <div class="article-data-information">
+            <div class="artilce-bottom  post-date col-md-6 col-sm-12" >
+              <span class="worker-name">{{allArticles.dataforpost | date:'longDate'}}</span>
+
+              <!--<button class="btn">-->
               <!--[ngClass]="{ 'disabled' : isSubmitting,-->
               <!--'btn-outline-primary': !article.favorited,-->
               <!--'btn-primary': article.favorited }"-->
               <!---->
               <!--<i class="material-icons">favorite_border</i>-->
-            <!--</button>-->
+              <!--</button>-->
+            </div>
+            <div class="artilce-bottom  text-right like-btn-block col-md-6 col-sm-12">
+              <app-favorite (like)="onLike($event, author.id, allArticles.idArticle)">
+              </app-favorite>
+            </div>
           </div>
+          <hr class="line-after-block">
         </div>
-      </div>
-      <div class="news-info-text" >
-        <div class="block-news">
-          <h1 class="title-news text-center">{{lastArticles.title}}</h1>
-        </div>
-        <div class="news-text">
-          <p class="body-news" >
-            {{lastArticles.lorem}}
-          </p>
-        </div>
-        <hr class="line-after-block">
       </div>
     </div>
   </div>
