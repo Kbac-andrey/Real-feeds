@@ -16,13 +16,13 @@ export class FavoriteComponent implements OnInit {
   public logInuser: any[] = [];
   public logInuserId: number;
   // @Output() userArticle = new EventEmitter<object>();
-  @Output() like: EventEmitter<any> = new EventEmitter();
+  // @Output() like: EventEmitter<any> = new EventEmitter();
 
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) { }
 
-  like() {
-
-  }
+  // like() {
+  //
+  // }
   // toggleFavorite(userId) {
   //   this.logInuser = this.authService.findgetLoggedUser();
   //     console.log(this.logInuser);

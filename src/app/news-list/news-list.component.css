@@ -19,6 +19,12 @@
   font-size: 20px;
   padding-top: 20px;
 }
+.article-data-information {
+  display: flex;
+}
+.post-date {
+  padding-top: 18px;
+}
 .line-after-block {
   color: #3f51b5;
   border-top: 1px solid  #3f51b5;
@@ -54,5 +60,25 @@
   }
   .body-news {
     padding-top: 0;
+  }
+  .article-data-information {
+    display: block;
+  }
+  .like-btn-block {
+    text-align: center !important;
+  }
+  .post-date {
+    text-align: center !important;
+  }
+}
+@media (max-width: 768px) {
+  .article-data-information {
+    display: block;
+  }
+  .like-btn-block {
+    text-align: center !important;
+  }
+  .post-date {
+    text-align: center !important;
   }
 }
