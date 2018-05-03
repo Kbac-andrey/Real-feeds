@@ -25,8 +25,6 @@ export class NewsListComponent implements OnInit {
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }
 
-
-
   // onLike(idUserWithCorrentArticle: number, idCorrentArticle: number) {
   //   this.logInuser = this.authService.findgetLoggedUser();
   //       if (this.logInuser.length === 0) {
