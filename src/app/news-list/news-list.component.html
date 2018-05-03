@@ -37,7 +37,7 @@
               <!--</button>-->
             </div>
             <div class="artilce-bottom  text-right like-btn-block col-md-6 col-sm-12">
-              <app-favorite (like)="onLike($event, author.id, allArticles.idArticle)">
+              <app-favorite  [userId]="author.id" [userArticleId]="allArticles.idArticle" (like)="onLike($event)">
               </app-favorite>
             </div>
           </div>

@@ -14,8 +14,6 @@ export class NewsListComponent implements OnInit {
   // public lastArticles: object;
   // public allArticles: Array<any>[];
   public logInuserId: number;
-  public idUserWithCorrentArticle: number;
-  public idCorrentArticle: number;
   // public UsernameOfArticle: string;
   logInuser: string[] = [];
   // CountLikes: number = 0;
@@ -25,22 +23,35 @@ export class NewsListComponent implements OnInit {
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }
 
-  // onLike(idUserWithCorrentArticle: number, idCorrentArticle: number) {
-  //   this.logInuser = this.authService.findgetLoggedUser();
-  //       if (this.logInuser.length === 0) {
-  //         this.router.navigate(['/login']);
-  //       } else {
-  //           this.idUserWithCorrentArticle = idUserWithCorrentArticle;
-  //           this.idCorrentArticle = idCorrentArticle;
-  //           for (let i = 0; i < this.logInuser.length; i++) {
-  //             this.logInuserId = this.logInuser[i]['id'];
-  //             this.news['userLikes'].push(this.logInuserId);
-  //             this.newsService.getArticleById(this.idUserWithCorrentArticle, this.idCorrentArticle, this.news ).subscribe(article => {
-  //                 console.log(article);
-  //             });
-  //           }
-  //       }
-  // }
+   onLike(event) {
+     this.logInuser = this.authService.findgetLoggedUser();
+         if (this.logInuser.length === 0) {
+           this.router.navigate(['/login']);
+         } else {
+             for (let key in this.news ){
+               if(this.news[key]['id'] == event.idUserWithCorrentArticle) {
+                 let user = this.news[key]
+                 for (let i = 0; i < user['articles'].length; i++) {
+                  if(user['articles'][i]['idArticle'] == event.idCorrentArticle){
+                    user['articles'][i]['userLikes'].push(this.logInuser[0]['id'])
+                    this.authService.editRegestrationUser(user.id, user).subscribe(user => {
+                      console.log(user);
+                    })
+                  }
+                 }
+               }
+             }
+             //this.idUserWithCorrentArticle = idUserWithCorrentArticle;
+             //this.idCorrentArticle = idCorrentArticle;
+             //for (let i = 0; i < this.logInuser.length; i++) {
+             //  this.logInuserId = this.logInuser[i]['id'];
+             //  this.news['userLikes'].push(this.logInuserId);
+             //  this.newsService.getArticleById(this.idUserWithCorrentArticle, this.idCorrentArticle, this.news ).subscribe(article => {
+             //      console.log(article);
+             //  });
+             //}
+         }
+   }
 
 
   // this.authService.getUserById()

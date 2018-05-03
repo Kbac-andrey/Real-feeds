@@ -13,7 +13,7 @@ export class NewsService {
   // getArticleById(articleId) {
   //   return this.http.get('http://localhost:3000/users/' + articleId);
   // }
-  getArticleById(articleId, idUserWithCorrentArticle, article): any {
+  setArticleById(articleId, idUserWithCorrentArticle, article): any {
     return this.http.post(`http://localhost:3000/users?id=${idUserWithCorrentArticle}&idArticle=?${articleId}`, article);
   }
   // favorite(userId) {
