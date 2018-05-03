@@ -25,18 +25,27 @@ export class NewsListComponent implements OnInit {
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }
 
-  onLike(idUserWithCorrentArticle: number, idCorrentArticle: number) {
-    this.logInuser = this.authService.findgetLoggedUser();
-        if (this.logInuser.length === 0) {
-          this.router.navigate(['/login']);
-        } else {
-          this.idUserWithCorrentArticle = idUserWithCorrentArticle;
-          this.idCorrentArticle = idCorrentArticle;
-          for (let i = 0; i < this.logInuser.length; i++) {
-            this.logInuserId = this.logInuser[i]['id'];
-            this.news['userLikes'].push(this.logInuserId);
-          }
-            // this.authService.getUserById()
+
+
+  // onLike(idUserWithCorrentArticle: number, idCorrentArticle: number) {
+  //   this.logInuser = this.authService.findgetLoggedUser();
+  //       if (this.logInuser.length === 0) {
+  //         this.router.navigate(['/login']);
+  //       } else {
+  //           this.idUserWithCorrentArticle = idUserWithCorrentArticle;
+  //           this.idCorrentArticle = idCorrentArticle;
+  //           for (let i = 0; i < this.logInuser.length; i++) {
+  //             this.logInuserId = this.logInuser[i]['id'];
+  //             this.news['userLikes'].push(this.logInuserId);
+  //             this.newsService.getArticleById(this.idUserWithCorrentArticle, this.idCorrentArticle, this.news ).subscribe(article => {
+  //                 console.log(article);
+  //             });
+  //           }
+  //       }
+  // }
+
+
+  // this.authService.getUserById()
           // for (let key in this.news ) {
           // idUserWithCorrentArticle = this.news[key]['id'];
           // console.log(idUserWithCorrentArticle);
@@ -47,27 +56,8 @@ export class NewsListComponent implements OnInit {
             //   this.newsService.getArticleById(this.lastArticles['id'], this.UsernameOfArticle, this.lastArticles ).subscribe(article => {
             //     console.log(article);
             //   });
-        }
-  }
 
 
-  // toggleFavorite(userId) {
-  //   this.logInuser = this.authService.findgetLoggedUser();
-  //     console.log(this.logInuser);
-  //     if (this.logInuser.length === 0) {
-  //       this.router.navigate(['/login']);
-  //       // return;
-  //     } else {
-  //       this.newsService.favorite(this.userId).subscribe(newsuser => {
-  //         newsuser = this.news['id'];
-  //         console.log(this.news);
-  //         console.log(this.userId);
-  //       });
-  //       console.log(this.news)
-  //       this.CountLikes++;
-  //     }
-  //
-  // }
   // onLike(logInuserIdForpush: any) {
   //   this.logInuser = this.authService.findgetLoggedUser();
   //       if (this.logInuser.length === 0) {
