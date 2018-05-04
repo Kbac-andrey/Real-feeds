@@ -14,9 +14,9 @@ export class UserAreaComponent implements OnInit {
   public userId: number;
   public logInuser: any[] = [];
   public user: object = {};
+  public userwWthLikes: object = {}
   public userDataForm: object = {};
   public StatusMessage: boolean = true;
-  // supdata: object = {};
   private routeSubscription: Subscription;
 
   constructor(private authService: AuthService, private newsService: NewsService, private activateRoute: ActivatedRoute) {
@@ -58,6 +58,11 @@ export class UserAreaComponent implements OnInit {
       this.checkUserstatus();
     });
     this.checkUserstatus();
+    this.newsService.fetchAllInformattion().subscribe(response => {
+      console.log(response);
+      this.userwWthLikes = response;
+      console.log(this.userwWthLikes);
+    });
   }
 
 }

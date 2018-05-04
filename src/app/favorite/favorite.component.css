@@ -7,6 +7,9 @@
   /*width: 66px;*/
   /*height: 63px;*/
 /*}*/
+.likes-btn:focus {
+  outline: none !important;
+}
 /*.heart-ico {*/
   /*font-size: 50px;*/
   /*left: 0;*/
