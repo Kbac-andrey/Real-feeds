@@ -11,81 +11,42 @@ import {Router} from '@angular/router';
 })
 export class NewsListComponent implements OnInit {
   public news: object;
-  // public lastArticles: object;
-  // public allArticles: Array<any>[];
-  public logInuserId: number;
   public idUserWithCorrentArticle: number;
   public idCorrentArticle: number;
-  // public UsernameOfArticle: string;
   logInuser: string[] = [];
-  // CountLikes: number = 0;
-  // @Output() onToggle = new EventEmitter<number>();
-
 
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }
 
-  // onLike(idUserWithCorrentArticle: number, idCorrentArticle: number) {
-  //   this.logInuser = this.authService.findgetLoggedUser();
-  //       if (this.logInuser.length === 0) {
-  //         this.router.navigate(['/login']);
-  //       } else {
-  //           this.idUserWithCorrentArticle = idUserWithCorrentArticle;
-  //           this.idCorrentArticle = idCorrentArticle;
-  //           for (let i = 0; i < this.logInuser.length; i++) {
-  //             this.logInuserId = this.logInuser[i]['id'];
-  //             this.news['userLikes'].push(this.logInuserId);
-  //             this.newsService.getArticleById(this.idUserWithCorrentArticle, this.idCorrentArticle, this.news ).subscribe(article => {
-  //                 console.log(article);
-  //             });
-  //           }
-  //       }
-  // }
+  onLike(event) {
+    this.logInuser = this.authService.findgetLoggedUser();
+    if (this.logInuser.length === 0) {
+      this.router.navigate(['/login']);
+    } else {
+      for (let key in this.news) {
+        if (this.news[key]['id'] == event.idUserWithCorrentArticle) {
+          let user = this.news[key]
+          for (let i = 0; i < user['articles'].length; i++) {
+            if (user['articles'][i]['idArticle'] == event.idCorrentArticle) {
+              if (user['articles'][i]['userLikes'] !== this.logInuser[0]['id'] && user['articles'][i]['userLikes'].indexOf(this.logInuser[0]['id'])) {
+                user['articles'][i]['userLikes'].push(this.logInuser[0]['id']);
+              } else {
+                let index = user['articles'][i]['userLikes'].indexOf(this.logInuser[0]['id']);
+                user['articles'][i]['userLikes'].splice(index, 1);
+              }
+              // this.CountLikes = user['articles'][i]['userLikes'].length;
+              this.authService.editRegestrationUser(user.id, user).subscribe(user => {
+              });
+            }
+          }
+        }
+      }
+    }
+  }
 
-
-  // this.authService.getUserById()
-          // for (let key in this.news ) {
-          // idUserWithCorrentArticle = this.news[key]['id'];
-          // console.log(idUserWithCorrentArticle);
-            // for (let i = 0; i < this.logInuser.length; i++) {
-            //    this.logInuserId = this.logInuser[i]['id'];
-            //   this.lastArticles['userLikes'].push(this.logInuserId);
-            //   // this.onToggle.emit(logInuserIdForpush)
-            //   this.newsService.getArticleById(this.lastArticles['id'], this.UsernameOfArticle, this.lastArticles ).subscribe(article => {
-            //     console.log(article);
-            //   });
-
-
-  // onLike(logInuserIdForpush: any) {
-  //   this.logInuser = this.authService.findgetLoggedUser();
-  //       if (this.logInuser.length === 0) {
-  //         this.router.navigate(['/login']);
-  //       } else {
-  //           for (let i = 0; i < this.logInuser.length; i++) {
-  //              this.logInuserId = this.logInuser[i]['id'];
-  //             this.lastArticles['userLikes'].push(this.logInuserId);
-  //             // this.onToggle.emit(logInuserIdForpush)
-  //             this.newsService.getArticleById(this.lastArticles['id'], this.UsernameOfArticle, this.lastArticles ).subscribe(article => {
-  //               console.log(article);
-  //             });
-  //           }
-  //       }
-  // }
-  // userLikes() {
-  //   this.newsService.getArticleById(this.lastArticles['id'], this.UsernameOfArticle, this.lastArticles ).subscribe(article => {
-  //     console.log(article);
-  //   });
-  // }
   ngOnInit() {
     this.newsService.fetchAllInformattion().subscribe(data => {
       this.news = data;
-      // for (let key in this.news ) {
-      //   this.UsernameOfArticle = this.news[key]['name']
-        // console.log(this.UsernameOfArticle);
-        // this.allArticles = this.news[key]['articles']
-        // this.lastArticles = this.allArticles[this.allArticles.length - 1];
-          // console.log(this.lastArticles);
-      // }
     });
   }
 }

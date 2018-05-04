@@ -29,11 +29,24 @@
                 <div class="demo-tab-content">
                   <div class="details-group">
                     <p class="title-details-group title-details-date-posts">
+                      <!--<span class="result-details-group">{{user.id}}</span>-->
                       <span class="result-details-group">{{user.dataforpost | date:'longDate'}}</span>
                     </p>
                     <span class="result-details-group title-details-post">{{user.lorem}}</span>
                   </div>
                   <hr class="line-after-block">
+                </div>
+              </mat-tab>
+              <mat-tab class="label-info" label="LIKE FEEL">
+                <div class="demo-tab-content" *ngFor="let article of userwWthLikes.articles">
+                  <!--<div class="demo-tab-content" *ngFor="let article of userWithLike.articles.userLikes; let i = index">-->
+                    <!--<div class="details-group" *ngIf="article[i].userLikes == (user.id)">-->
+                      <div class="block-news">
+                        <h1 class="title-news text-center">{{article.articles}}</h1>
+                      </div>
+                    <!--</div>-->
+                    <hr class="line-after-block">
+                  <!--</div>-->
                 </div>
               </mat-tab>
             <mat-tab class="label-info" label="More details about me">
