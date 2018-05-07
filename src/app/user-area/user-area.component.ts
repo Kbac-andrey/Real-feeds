@@ -14,7 +14,7 @@ export class UserAreaComponent implements OnInit {
   public userId: number;
   public logInuser: any[] = [];
   public user: object = {};
-  public userwWthLikes: object = {}
+  public usersWthLikes: object;
   public userDataForm: object = {};
   public StatusMessage: boolean = true;
   private routeSubscription: Subscription;
@@ -46,9 +46,6 @@ export class UserAreaComponent implements OnInit {
     };
     this.authService.editRegestrationUser(this.userId, this.user).subscribe(user => {
       this.logInuser.push(user)
-      // for (let i = 0; i < this.logInuser.length; i++) {
-      //     delete this.logInuser[0];
-      // }
       localStorage.setItem('LogInUser', JSON.stringify(this.logInuser));
     });
   }
@@ -58,11 +55,8 @@ export class UserAreaComponent implements OnInit {
       this.checkUserstatus();
     });
     this.checkUserstatus();
-    this.newsService.fetchAllInformattion().subscribe(response => {
-      console.log(response);
-      this.userwWthLikes = response;
-      console.log(this.userwWthLikes);
+    this.newsService.fetchAllInformattion().subscribe(allUsersWithArticles => {
+      this.usersWthLikes = allUsersWithArticles;
     });
   }
-
 }
