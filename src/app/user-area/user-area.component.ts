@@ -59,5 +59,4 @@ export class UserAreaComponent implements OnInit {
       this.usersWthLikes = allUsersWithArticles;
     });
   }
-
 }
