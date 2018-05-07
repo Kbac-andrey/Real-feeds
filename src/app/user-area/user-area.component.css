@@ -65,7 +65,10 @@
   color: orangered;
 }
 /*edit tab*/
-
+.article-info {
+  font-size: 20px;
+  color: #455A64;
+}
 @media (max-width: 575.98px) {
   .author-info {
     display: block;

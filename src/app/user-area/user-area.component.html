@@ -29,7 +29,6 @@
                 <div class="demo-tab-content">
                   <div class="details-group">
                     <p class="title-details-group title-details-date-posts">
-                      <!--<span class="result-details-group">{{user.id}}</span>-->
                       <span class="result-details-group">{{user.dataforpost | date:'longDate'}}</span>
                     </p>
                     <span class="result-details-group title-details-post">{{user.lorem}}</span>
@@ -38,15 +37,35 @@
                 </div>
               </mat-tab>
               <mat-tab class="label-info" label="LIKE FEEL">
-                <div class="demo-tab-content" *ngFor="let article of userwWthLikes.articles">
-                  <!--<div class="demo-tab-content" *ngFor="let article of userWithLike.articles.userLikes; let i = index">-->
-                    <!--<div class="details-group" *ngIf="article[i].userLikes == (user.id)">-->
-                      <div class="block-news">
-                        <h1 class="title-news text-center">{{article.articles}}</h1>
+                <div class="demo-tab-content" *ngFor="let userWithlikes of usersWthLikes">
+                  <div class="news-info-text" *ngFor="let article of userWithlikes.articles; let i = index">
+                    <div *ngIf="article.userLikes.indexOf(user.id) != -1">
+                      <div class="author-info" *ngIf="article.userLikes.length>0">
+                        <div class="block-photo col-md-4">
+                          <img src="{{userWithlikes.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">
+                        </div>
+                        <div class="block-worker-info col-md-4 text-center">
+                          <div class="sub-block-worker-info block-Auth-info-text">
+                            <span class="worker-name label-details-country article-info">{{userWithlikes.name}} {{userWithlikes.lastName}}</span>
+                          </div>
+                        </div>
+                        <div class="block-worker-info col-md-4 text-right">
+                          <div class="sub-block-worker-info block-Auth-info-text">
+                            <span class="worker-name label-details-country article-info">{{article.dataforpost | date:'longDate'}}</span>
+                          </div>
+                        </div>
                       </div>
-                    <!--</div>-->
-                    <hr class="line-after-block">
-                  <!--</div>-->
+                      <div class="block-news">
+                        <h1 class="title-news text-center">{{article.title}}</h1>
+                      </div>
+                      <div class="news-text">
+                        <p class="body-news" >
+                          {{article.lorem}}
+                        </p>
+                      </div>
+                      <hr class="line-after-block">
+                    </div>
+                  </div>
                 </div>
               </mat-tab>
             <mat-tab class="label-info" label="More details about me">
@@ -114,72 +133,3 @@
         </mat-card>
       </div>
     </div>
-
-
-
-
-
-
-<!--<div class="wrap">-->
-  <!--<div class="container-fluid">-->
-    <!--<div class="litle-inform row">-->
-      <!--<div class="block-photo col-12 col-sm-2">-->
-        <!--<img src="{{user.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">-->
-      <!--</div>-->
-      <!--<div class="block-worker-info col-12 col-sm-5">-->
-        <!--<div class="sub-block-worker-info">-->
-          <!--<span class="worker-name">{{user.name}} {{user.lastName}}</span>-->
-        <!--</div>-->
-        <!--<div class="sub-block-worker-info">-->
-          <!--<span class="worker-name">{{user.stack}}</span>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="block-worker-info col-12 col-sm-5">-->
-        <!--<div class="sub-block-worker-info">-->
-          <!--<span class="email-icon"><mat-icon >email</mat-icon></span>-->
-          <!--<span class="worker-name">{{user.email}}</span>-->
-        <!--</div>-->
-        <!--<div class="sub-block-worker-info">-->
-            <!--<span class="email-icon">-->
-              <!--<mat-icon >phone</mat-icon>-->
-            <!--</span>-->
-          <!--<span class="worker-name">{{user.phoneNumber}}</span>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="more-inform">-->
-      <!--<mat-card>-->
-        <!--<mat-card-content>-->
-          <!--<mat-tab-group class="demo-tab-group">-->
-            <!--<mat-tab class="label-info" label="WORK DETAILS">-->
-              <!--<div class="demo-tab-content">-->
-                <!--<div class="details-group">-->
-                  <!--<span class="title-details-group">Base Location:</span>-->
-                  <!--<span class="result-details-group">{{user.country}}</span>-->
-                <!--</div>-->
-              <!--</div>-->
-            <!--</mat-tab>-->
-            <!--<mat-tab class="label-info" label="CAREER DETAILS">-->
-              <!--<div class="demo-tab-content">-->
-                <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.-->
-                <!--Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.-->
-                <!--In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,-->
-                <!--feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,-->
-                <!--orci enim rutrum enim, vel tempor sapien arcu a tellus.-->
-              <!--</div>-->
-            <!--</mat-tab>-->
-            <!--<mat-tab class="label-info" label="ACTIVITY">-->
-              <!--<div class="demo-tab-content">-->
-                <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.-->
-                <!--Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.-->
-                <!--In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,-->
-                <!--feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,-->
-                <!--orci enim rutrum enim, vel tempor sapien arcu a tellus.-->
-              <!--</div>-->
-            <!--</mat-tab>-->
-          <!--</mat-tab-group>-->
-        <!--</mat-card-content>-->
-      <!--</mat-card>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
