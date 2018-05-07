@@ -13,7 +13,7 @@ export class NewsListComponent implements OnInit {
   public news: object;
   public idUserWithCorrentArticle: number;
   public idCorrentArticle: number;
-  logInuser: string[] = [];
+  public logInuser: string[] = [];
 
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }

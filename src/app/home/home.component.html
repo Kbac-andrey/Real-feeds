@@ -9,12 +9,14 @@
       <app-news-list>
       </app-news-list>
     </mat-tab>
-    <mat-tab>
+    <mat-tab *ngIf="showLogOut">
       <ng-template mat-tab-label>
-        <div fxLayout="column" fxLayoutAlign="start center">
+        <div fxLayout="column" fxLayoutAlign="start center" routerLink="addNews/{{logInuserId}}">
           <span class="tab-link">Add News</span>
         </div>
       </ng-template>
+      <app-add-news>
+      </app-add-news>
     </mat-tab>
   </mat-tab-group>
 </div>
