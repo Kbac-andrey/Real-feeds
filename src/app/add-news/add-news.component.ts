@@ -30,7 +30,6 @@ export class AddNewsComponent implements OnInit {
       console.log(this.user)
     });
   }
-
   ngOnInit() {
 
   }
