@@ -3,9 +3,48 @@
   padding: 15px;
   margin: auto;
 }
+.description {
+  padding-top: 15px;
+}
 .title-news {
   text-transform: uppercase;
   color: orangered;
+}
+.title-news-description {
+  text-transform: uppercase;
+  color: #10b2e5;
+  font-size: 25px;
+}
+#inputTitleNews::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTitleNews::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTitleNews:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+#inputTitleNews:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTitleNews:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+#inputTitleNews:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+#inputTitleNews:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+#inputTitleNews:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+#inputTextNews {
+  width: 100% !important;/* Ширина поля в процентах */
+  height: 590px !important; /* Высота поля в пикселах */
+  resize: none !important;/* Запрещаем изменять размер */
+  overflow: auto;
+}
+
+#inputTextNews::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTextNews::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTextNews:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+#inputTextNews:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTextNews:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+#inputTextNews:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+#inputTextNews:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+#inputTextNews:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+
+
+
+.btn-add-news {
+  width: 80%;
 }
 .create-link {
   color: #10b2e5 !important;
