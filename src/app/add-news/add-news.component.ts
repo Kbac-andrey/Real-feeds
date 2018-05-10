@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs/Subscription';
 import {HttpClient} from '@angular/common/http';
+import {NewsService} from '../services/news-service.service';
 
 @Component({
   selector: 'app-add-news',
@@ -14,22 +15,29 @@ export class AddNewsComponent implements OnInit {
   public userId: number;
   public user: object = {};
   public article: object = {}
-  constructor( private http: HttpClient, public authService: AuthService, private activateRoute: ActivatedRoute, private router: Router) {
+  constructor( private http: HttpClient, public authService: AuthService, public newsservice: NewsService, private activateRoute: ActivatedRoute, private router: Router) {
     this.routeSubscriptiontwo = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
-  addNews(newsdata): void {
+  addNews(newNews): void {
     this.article = {
-      'title': newsdata.inputTitleNews,
-      'lorem': newsdata.inputTextNews,
+      'idArticle': 0,
+      'title': newNews.inputTitleNews,
+      'lorem': newNews.inputTextNews,
+      'dataforpost': Date(),
       'userLikes': []
     };
     this.authService.getUserById(this.userId).subscribe(user => {
-      console.log(this.userId)
-      console.log(user)
-      this.user = user;
-      console.log(this.user)
+       this.article = newNews
+      this.user = user
+      this.article['idArticle'] = this.user['articles'].length;
+      this.article['dataforpost'] = Date();
+      this.article['userLikes'] = [];
+      this.user['articles'].push(this.article);
+      this.newsservice.addnews(this.userId, this.user).subscribe( user => {
+      });
     });
   }
+
   ngOnInit() {
 
   }
