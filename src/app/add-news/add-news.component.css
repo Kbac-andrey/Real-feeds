@@ -10,6 +10,11 @@
   text-transform: uppercase;
   color: orangered;
 }
+.addnews-block-form {
+  margin: 0 auto;
+  width: 85%;
+}
+
 .title-news-description {
   text-transform: uppercase;
   color: #10b2e5;
@@ -25,7 +30,7 @@
 #inputTitleNews:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
 
 #inputTextNews {
-  width: 100% !important;/* Ширина поля в процентах */
+  width: 100%!important;/* Ширина поля в процентах */
   height: 590px !important; /* Высота поля в пикселах */
   resize: none !important;/* Запрещаем изменять размер */
   overflow: auto;

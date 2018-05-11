@@ -1,0 +1,23 @@
+.date-icon {
+  vertical-align: text-top;
+}
+.socialLink {
+  color: white;
+}
+.socialItem {
+  float: left;
+  padding: 0 10px;
+}
+.fa-facebook-official {
+  font-size: 30px;
+  color: #551a8b;
+  /*color:#ff4081;*/
+}
+.fa-github {
+  font-size: 30px;
+  color: #546f7a;
+}
+.fa-linkedin {
+  font-size: 30px;
+  color: #007bff;
+}

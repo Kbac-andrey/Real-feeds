@@ -25,6 +25,7 @@ import { ConfirmationWindowComponent } from './confirmation-window/confirmation-
 import { UserAreaComponent } from './user-area/user-area.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { AddNewsComponent } from './add-news/add-news.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -40,6 +41,7 @@ import { AddNewsComponent } from './add-news/add-news.component';
     UserAreaComponent,
     FavoriteComponent,
     AddNewsComponent,
+    FooterComponent,
   ],
   entryComponents: [ConfirmationWindowComponent],
   imports: [

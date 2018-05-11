@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs/Subscription';
 import {HttpClient} from '@angular/common/http';
 import {NewsService} from '../services/news-service.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add-news',
@@ -15,9 +16,12 @@ export class AddNewsComponent implements OnInit {
   public userId: number;
   public user: object = {};
   public article: object = {}
+  @ViewChild('newNews') newUserForm: NgForm;
+
   constructor( private http: HttpClient, public authService: AuthService, public newsservice: NewsService, private activateRoute: ActivatedRoute, private router: Router) {
     this.routeSubscriptiontwo = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
+
   addNews(newNews): void {
     this.article = {
       'idArticle': 0,
@@ -35,6 +39,8 @@ export class AddNewsComponent implements OnInit {
       this.user['articles'].push(this.article);
       this.newsservice.addnews(this.userId, this.user).subscribe( user => {
       });
+      this.newUserForm.reset();
+      this.router.navigate(['']);
     });
   }
 
