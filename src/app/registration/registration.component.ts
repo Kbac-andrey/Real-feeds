@@ -28,6 +28,7 @@ export class RegistrationComponent {
       'avatar': data.avatar = 'https://static.productionready.io/images/smiley-cyrus.jpg',
       'country': data.country,
       'phoneNumber': data.phoneNumber,
+      'articles': []
     };
     this.authService.regestrationUser(this.user).subscribe(user => {
         this.user = data;

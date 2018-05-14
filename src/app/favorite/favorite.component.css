@@ -10,6 +10,9 @@
 .likes-btn:focus {
   outline: none !important;
 }
+.likes-btn:hover {
+ background-color: #3f51b5 !important;
+}
 /*.heart-ico {*/
   /*font-size: 50px;*/
   /*left: 0;*/

@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit{
     this.logInuser = this.authService.findgetLoggedUser();
     for (let i = 0; i < this.logInuser.length; i++) {
       this.logInuserId = this.logInuser[i]['id'];
-      console.log(this.logInuserId);
     }
   }
   ngOnInit() {

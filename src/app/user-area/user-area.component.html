@@ -39,7 +39,7 @@
               <mat-tab class="label-info" label="LIKE FEEL">
                 <div class="demo-tab-content" *ngFor="let userWithlikes of usersWthLikes">
                   <div class="news-info-text" *ngFor="let article of userWithlikes.articles; let i = index">
-                    <div *ngIf="article.userLikes.indexOf(user.id) != -1">
+                    <div *ngIf="article.userLikes.indexOf(user.id) != -1 ||  0">
                       <div class="author-info" *ngIf="article.userLikes.length>0">
                         <div class="block-photo col-md-4">
                           <img src="{{userWithlikes.avatar}}" alt="ava" class="rounded-circle avatar border border-primary">

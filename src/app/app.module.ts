@@ -24,6 +24,8 @@ import { LocalStorageModule } from '@ngx-pwa/local-storage';
 import { ConfirmationWindowComponent } from './confirmation-window/confirmation-window.component';
 import { UserAreaComponent } from './user-area/user-area.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { AddNewsComponent } from './add-news/add-news.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -38,6 +40,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     ConfirmationWindowComponent,
     UserAreaComponent,
     FavoriteComponent,
+    AddNewsComponent,
+    FooterComponent,
   ],
   entryComponents: [ConfirmationWindowComponent],
   imports: [
@@ -58,6 +62,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
       { path: 'login', component: LoginComponent},
       { path: 'registration', component: RegistrationComponent},
       { path: 'user/:id', component: UserAreaComponent},
+      { path: 'addNews/:id', component: AddNewsComponent},
       { path: 'home', redirectTo: 'HomeComponent'}
     ])
   ],

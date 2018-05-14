@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
 import {NewsService} from './news-service.service';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,7 @@ export class AuthService {
   regestrationUser(user) {
     return this.http.post('http://localhost:3000/users ', user);
   }
-  editRegestrationUser(userId, user) {
+  editRegestrationUser(userId, user): Observable<any> {
     return this.http.put('http://localhost:3000/users/' + userId, user);
   }
   getLoginusers(userName, userPassword): any {

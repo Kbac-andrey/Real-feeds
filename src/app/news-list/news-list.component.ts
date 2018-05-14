@@ -3,6 +3,7 @@ import { HttpClient} from '@angular/common/http';
 import { NewsService } from '../services/news-service.service';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-news-list',
@@ -11,9 +12,11 @@ import {Router} from '@angular/router';
 })
 export class NewsListComponent implements OnInit {
   public news: object;
+   public shownewarticle: boolean = false;
   public idUserWithCorrentArticle: number;
   public idCorrentArticle: number;
-  logInuser: string[] = [];
+  public logInuser: string[] = [];
+  subscription: Subscription;
 
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }
