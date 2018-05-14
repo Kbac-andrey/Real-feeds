@@ -13,12 +13,13 @@ import {NgForm} from '@angular/forms';
 })
 export class AddNewsComponent implements OnInit {
   private routeSubscriptiontwo: Subscription;
+  public StatusMessage: boolean = true;
   public userId: number;
   public user: object = {};
   public article: object = {}
   @ViewChild('newNews') newUserForm: NgForm;
 
-  constructor( private http: HttpClient, public authService: AuthService, public newsservice: NewsService, private activateRoute: ActivatedRoute, private router: Router) {
+  constructor( private http: HttpClient, public authService: AuthService, private newsService: NewsService, public newsservice: NewsService, private activateRoute: ActivatedRoute, private router: Router) {
     this.routeSubscriptiontwo = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
 
@@ -31,7 +32,7 @@ export class AddNewsComponent implements OnInit {
       'userLikes': []
     };
     this.authService.getUserById(this.userId).subscribe(user => {
-       this.article = newNews
+      this.article = newNews
       this.user = user
       this.article['idArticle'] = this.user['articles'].length;
       this.article['dataforpost'] = Date();
@@ -39,8 +40,10 @@ export class AddNewsComponent implements OnInit {
       this.user['articles'].push(this.article);
       this.newsservice.addnews(this.userId, this.user).subscribe( user => {
       });
-      this.newUserForm.reset();
+
+      // this.authService.setStatusMessage(this.StatusMessage)
       this.router.navigate(['']);
+      this.newUserForm.reset();
     });
   }
 
