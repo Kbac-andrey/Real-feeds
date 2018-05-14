@@ -48,11 +48,6 @@ export class NewsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.subscription = this.authService.isLoggedIn.subscribe(value => {
-      console.log(value);
-      this.shownewarticle = value;
-      console.log(this.shownewarticle);
-    });
     this.newsService.fetchAllInformattion().subscribe(data => {
       this.news = data;
     });

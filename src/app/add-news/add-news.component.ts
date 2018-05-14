@@ -39,10 +39,11 @@ export class AddNewsComponent implements OnInit {
       this.article['userLikes'] = [];
       this.user['articles'].push(this.article);
       this.newsservice.addnews(this.userId, this.user).subscribe( user => {
+        this.router.navigate(['']);
       });
 
-      // this.authService.setStatusMessage(this.StatusMessage)
-      this.router.navigate(['']);
+
+
       this.newUserForm.reset();
     });
   }
