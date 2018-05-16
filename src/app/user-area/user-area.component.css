@@ -60,15 +60,24 @@
   padding: 15px;
   margin: auto;
 }
+.title-of-news {
+  padding-bottom: 20px;
+}
 .title-news {
   text-transform: uppercase;
   color: orangered;
+  margin: 0;
 }
 /*edit tab*/
 .article-info {
   font-size: 20px;
   color: #455A64;
 }
+.body-news {
+  padding-top: 0 !important;
+  font-size: 20px !important;
+}
+
 @media (max-width: 575.98px) {
   .author-info {
     display: block;

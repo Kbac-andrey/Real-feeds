@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs/Subscription';
 import {NewsService} from '../services/news-service.service';
@@ -19,7 +19,7 @@ export class UserAreaComponent implements OnInit {
   public StatusMessage: boolean = true;
   private routeSubscription: Subscription;
 
-  constructor(private authService: AuthService, private newsService: NewsService, private activateRoute: ActivatedRoute) {
+  constructor(private authService: AuthService, private newsService: NewsService, private router: Router, private activateRoute: ActivatedRoute) {
     this.routeSubscription = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
   checkUserstatus() {

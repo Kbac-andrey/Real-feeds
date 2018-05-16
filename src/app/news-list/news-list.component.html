@@ -14,7 +14,7 @@
 
         </div>
       </div>
-      <div class="news-info-text" *ngFor="let article of author.articles; let i = index">
+      <div class="news-info-text" *ngFor="let article of author.articles;  let i = index">
         <div *ngIf="i == (author.articles.length-1)">
           <div class="block-news">
             <h1 class="title-news text-center">{{article.title}}</h1>
