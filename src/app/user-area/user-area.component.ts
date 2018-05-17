@@ -52,6 +52,7 @@ export class UserAreaComponent implements OnInit {
   ngOnInit() {
     this.authService.getUserById(this.userId).subscribe(user => {
       this.user = user;
+      console.log(this.user)
       this.checkUserstatus();
     });
     this.checkUserstatus();

@@ -25,14 +25,31 @@
         <mat-card>
           <mat-card-content>
             <mat-tab-group class="demo-tab-group">
+                <!--<div *ngIf="i == (author.articles.length-1)">-->
               <mat-tab class="label-info" label="MY FEEL HISTORY">
-                <div class="demo-tab-content">
-                  <div class="details-group">
-                    <p class="title-details-group title-details-date-posts">
-                      <span class="result-details-group">{{user.dataforpost | date:'longDate'}}</span>
-                    </p>
-                    <span class="result-details-group title-details-post">{{user.lorem}}</span>
+                <div class="demo-tab-content" *ngFor="let userarticle of user.articles.reverse();  let i = index">
+                  <div class="block-news title-of-news">
+                    <h1 class="title-news text-center">{{userarticle.title}}</h1>
                   </div>
+                  <div class="news-text">
+                    <p class="body-news" >
+                      {{userarticle.lorem}}
+                    </p>
+                  </div>
+                  <div class="article-data-information">
+                    <div class="artilce-bottom  post-date col-md-10 col-sm-12" >
+                      <span class="article-date">{{userarticle.dataforpost | date:'longDate'}}</span>
+                    </div>
+                    <div class="artilce-bottom  text-right like-btn-block col-md-2 col-sm-12">
+                      <mat-icon class="heart-ico" aria-label="Example icon-button with a heart icon">thumb_up</mat-icon><span class="counter-likes"> {{userarticle.userLikes.length}}</span>
+                    </div>
+                  </div>
+                  <!--<div class="details-group">-->
+                    <!--<p class="title-details-group title-details-date-posts">-->
+                      <!--<span class="result-details-group">{{user.dataforpost | date:'longDate'}}</span>-->
+                    <!--</p>-->
+                    <!--<span class="result-details-group title-details-post">{{user.lorem}}</span>-->
+                  <!--</div>-->
                   <hr class="line-after-block">
                 </div>
               </mat-tab>
@@ -88,7 +105,7 @@
                 </p>
               </div>
             </mat-tab>
-            <mat-tab class="label-info" label="edit">
+            <mat-tab class="label-info" label="edit profile">
               <div class="demo-tab-content">
                 <form #editUserForm="ngForm" (ngSubmit)="editUser(editUserForm.value)" class="form-edit">
                   <h1 class="title-news text-center">edit profile</h1>
