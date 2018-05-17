@@ -26,7 +26,7 @@ import { UserAreaComponent } from './user-area/user-area.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { FooterComponent } from './footer/footer.component';
-import { FilterPipe } from './filter.pipe';
+
 
 
 
@@ -42,8 +42,7 @@ import { FilterPipe } from './filter.pipe';
     UserAreaComponent,
     FavoriteComponent,
     AddNewsComponent,
-    FooterComponent,
-    FilterPipe,
+    FooterComponent
   ],
   entryComponents: [ConfirmationWindowComponent],
   imports: [
