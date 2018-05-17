@@ -52,6 +52,22 @@
   background-color: #3f51b5;
   width: 100%;
 }
+.body-news {
+  color: #546f7a;
+  font-size: 18px;
+}
+.article-date{
+  color: #546f7a;
+  font-size: 18px;
+}
+.counter-likes {
+  vertical-align: bottom;
+  color: #ff4081
+}
+.heart-ico {
+  color: #3f51b5;
+  vertical-align: middle;
+}
 
 /*edit tab*/
 .form-edit {
@@ -60,15 +76,28 @@
   padding: 15px;
   margin: auto;
 }
+.title-of-news {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
 .title-news {
   text-transform: uppercase;
   color: orangered;
+  margin: 0;
+}
+.article-data-information {
+  display: flex;
 }
 /*edit tab*/
 .article-info {
   font-size: 20px;
   color: #455A64;
 }
+.body-news {
+  padding-top: 0 !important;
+  font-size: 20px !important;
+}
+
 @media (max-width: 575.98px) {
   .author-info {
     display: block;
@@ -89,6 +118,15 @@
   }
   .body-news {
     padding-top: 0;
+  }
+  .article-data-information {
+    display: block;
+  }
+  .like-btn-block {
+    text-align: center !important;
+  }
+  .post-date {
+    text-align: center !important;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -111,6 +149,15 @@
   }
   .body-news {
     padding-top: 0;
+  }
+  .article-data-information {
+    display: block;
+  }
+  .like-btn-block {
+    text-align: center !important;
+  }
+  .post-date {
+    text-align: center !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1208px) {

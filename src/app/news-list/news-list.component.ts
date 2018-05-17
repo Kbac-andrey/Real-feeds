@@ -11,15 +11,17 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent implements OnInit {
-  public news: object;
-   public shownewarticle: boolean = false;
+  public news: any;
   public idUserWithCorrentArticle: number;
   public idCorrentArticle: number;
+  public sortDate: string[] = [];
   public logInuser: string[] = [];
   subscription: Subscription;
 
   constructor( private http: HttpClient, private newsService: NewsService, private authService: AuthService, private router: Router) {
   }
+
+
 
   onLike(event) {
     this.logInuser = this.authService.findgetLoggedUser();
@@ -50,6 +52,28 @@ export class NewsListComponent implements OnInit {
   ngOnInit() {
     this.newsService.fetchAllInformattion().subscribe(data => {
       this.news = data;
+      // console.log(this.news)
+      // let unsortDate = []
+      // for (let key in this.news) {
+      //   let user = this.news[key]
+      //   let lastIndex = user['articles'].length -1;
+      //   let lastArticle = user['articles'][lastIndex];
+      //   // user['articles'][user['articles'].length -1]
+      //   if (lastArticle !== undefined) {
+      //     unsortDate.push(lastArticle);
+      //     // console.log(unsortDate)
+      //   }
+      // }
+      this.sortDate = this.news.sort((a: any, b: any) => {
+        let lastIndexA = a['articles'].length - 1;
+        let lastIndexB = b['articles'].length - 1;
+        let lastArticleA = a['articles'][lastIndexA];
+        let lastArticleB = b['articles'][lastIndexB];
+        return new Date(lastArticleB['dataforpost']).getTime() - new Date(lastArticleA['dataforpost']).getTime();
+      });
+      // console.log(this.sortDate)
     });
+
+
   }
 }

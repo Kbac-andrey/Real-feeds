@@ -28,7 +28,7 @@ export class AddNewsComponent implements OnInit {
       'idArticle': 0,
       'title': newNews.inputTitleNews,
       'lorem': newNews.inputTextNews,
-      'dataforpost': Date(),
+      'dataforpost': Date.now(),
       'userLikes': []
     };
     this.authService.getUserById(this.userId).subscribe(user => {
@@ -37,6 +37,7 @@ export class AddNewsComponent implements OnInit {
       this.article['idArticle'] = this.user['articles'].length;
       this.article['dataforpost'] = Date();
       this.article['userLikes'] = [];
+      // this.user['articles'] = [this.article, ...this.user['articles']]
       this.user['articles'].push(this.article);
       this.newsservice.addnews(this.userId, this.user).subscribe( user => {
         this.router.navigate(['']);
