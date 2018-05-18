@@ -13,5 +13,7 @@ export class NewsService {
   addnews(userId, user): Observable<any> {
     return this.http.put('http://localhost:3000/users/' + userId, user);
   }
-
+  deleteNews(userId, user): Observable<any>  {
+    return this.http.put('http://localhost:3000/users/' + userId, user);
+  }
 }

@@ -34,6 +34,8 @@
   height: 590px !important; /* Высота поля в пикселах */
   resize: none !important;/* Запрещаем изменять размер */
   overflow: auto;
+  color: #546f7a;
+  font-size: 20px;
 }
 
 #inputTextNews::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; color:red;}
