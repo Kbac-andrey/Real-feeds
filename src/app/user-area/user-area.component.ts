@@ -32,6 +32,11 @@ export class UserAreaComponent implements OnInit {
        }
     }
   }
+  delete(userarticle) {
+    this.user['articles'].splice(this.user['articles'].indexOf(userarticle), 1)
+    this.newsService.deleteNews(this.userId, this.user).subscribe( user => {
+    });
+  }
   editUser(userData) {
     this.userDataForm = {
       'avatar': this.user['avatar'],
@@ -52,7 +57,6 @@ export class UserAreaComponent implements OnInit {
   ngOnInit() {
     this.authService.getUserById(this.userId).subscribe(user => {
       this.user = user;
-      console.log(this.user)
       this.checkUserstatus();
     });
     this.checkUserstatus();

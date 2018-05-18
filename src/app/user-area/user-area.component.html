@@ -54,9 +54,15 @@
                     <!--<mat-icon class="heart-ico" aria-label="Example icon-button with a heart icon">thumb_up</mat-icon>-->
                   <!--</button>-->
                   <div class="block-controls text-center">
-                    <button type="button" class="btn btn-outline-danger btn-lg text-center">
+                    <button type="button" class="btn-control btn btn-outline-danger btn-lg text-center text-uppercase" (click)="delete(userarticle)">
                       delete
                       <i class="fa fas fa-trash "></i>
+                      <!--fa-spin-->
+                    </button>
+
+                    <button type="button" class="btn-control btn btn-outline-primary btn-lg text-center text-uppercase">
+                      edit
+                      <i class="fa fas fa-edit"></i>
                       <!--fa-spin-->
                     </button>
                   </div>

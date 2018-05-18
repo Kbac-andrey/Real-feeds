@@ -20,6 +20,7 @@
   color: #546f7a;
   font-size: 20px;
   padding-top: 20px;
+  overflow-wrap: break-word
 }
 .article-data-information {
   display: flex;
