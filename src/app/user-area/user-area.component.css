@@ -71,6 +71,45 @@
   color: #ff4081;
   vertical-align: middle;
 }
+.edit-news {
+  width: 100%;
+  padding: 40px 0 0 0 ;
+  margin: auto;
+
+}
+.label-edit {
+  color:orangered;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#inputTitleNews::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTitleNews::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTitleNews:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+#inputTitleNews:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTitleNews:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+#inputTitleNews:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+#inputTitleNews:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+#inputTitleNews:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+#inputTextNews {
+  width: 100%!important;/* Ширина поля в процентах */
+  height: 590px !important; /* Высота поля в пикселах */
+  resize: none !important;/* Запрещаем изменять размер */
+  overflow: auto;
+  color: #546f7a;
+  font-size: 20px;
+}
+#inputTextNews::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTextNews::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTextNews:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+#inputTextNews:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease; color:red;}
+#inputTextNews:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+#inputTextNews:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+#inputTextNews:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+#inputTextNews:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+.btn-add-news {
+  width: 80%;
+}
 
 /*edit tab*/
 .form-edit {
