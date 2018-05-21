@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {trigger, state, animate, transition, style} from "@angular/animations";
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs/Subscription';
@@ -8,9 +9,18 @@ import {NewsService} from '../services/news-service.service';
 @Component({
   selector: 'app-user-area',
   templateUrl: './user-area.component.html',
-  styleUrls: ['./user-area.component.css']
+  styleUrls: ['./user-area.component.css'],
+  animations: [
+    trigger('visibilityChanged', [
+      state('true', style({ display: 'block', opacity: 1, transform: 'scale(1.0)' })),
+      state('false', style({ display: 'none', opacity: 0, transform: 'scale(0.0)'  })),
+      transition('1 => 0', animate('900ms')),
+      transition('0 => 1', animate('900ms'))
+    ])
+  ],
 })
 export class UserAreaComponent implements OnInit {
+  public showEditFormArray: any[] = []
   public userId: number;
   public logInuser: any[] = [];
   public user: object = {};
@@ -22,6 +32,15 @@ export class UserAreaComponent implements OnInit {
   constructor(private authService: AuthService, private newsService: NewsService, private router: Router, private activateRoute: ActivatedRoute) {
     this.routeSubscription = activateRoute.params.subscribe(params => this.userId = params['id']);
   }
+  setValueForToggleArticle() {
+    for (let i = 0; i < this.user['articles'].length; i++) {
+      this.showEditFormArray.push(false)
+    }
+  }
+  toggleforEditArticle (i) {
+    this.showEditFormArray[i] = !this.showEditFormArray[i];
+  }
+
   checkUserstatus() {
     this.logInuser = this.authService.findgetLoggedUser();
     for (let i = 0; i < this.logInuser.length; i++) {
@@ -32,11 +51,14 @@ export class UserAreaComponent implements OnInit {
        }
     }
   }
+
+
   delete(userarticle) {
     this.user['articles'].splice(this.user['articles'].indexOf(userarticle), 1)
     this.newsService.deleteNews(this.userId, this.user).subscribe( user => {
     });
   }
+
   editUser(userData) {
     this.userDataForm = {
       'avatar': this.user['avatar'],
@@ -54,9 +76,11 @@ export class UserAreaComponent implements OnInit {
       localStorage.setItem('LogInUser', JSON.stringify(this.logInuser));
     });
   }
+
   ngOnInit() {
     this.authService.getUserById(this.userId).subscribe(user => {
       this.user = user;
+      this.setValueForToggleArticle()
       this.checkUserstatus();
     });
     this.checkUserstatus();
