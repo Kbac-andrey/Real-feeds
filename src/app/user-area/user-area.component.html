@@ -67,18 +67,19 @@
                       <i class="fa fas fa-edit"></i>
                     </button>
                   </div>
-                  <div class="text-center edit-news" [@visibilityChanged]="showEditFormArray[i]" >
-                    <form #newNews="ngForm" (ngSubmit)="addNews(newNews.value)" class="form-restration">
+                  <div class="text-center edit-news" *ngIf="showEditFormArray[i]">
+                    <!--[@visibilityChanged]="showEditFormArray[i]"-->
+                    <form #editArticleForm="ngForm" (ngSubmit)="editArticle(editArticleForm.value, userarticle)" class="form-restration">
                       <div class="form-group addnews-block-form text-center" >
                         <label class="label-edit" for="inputTitleNews">Title of news:</label>
-                        <input type="text" class="form-control" placeholder="Put title of news" name="title" id="inputTitleNews" ngModel required>
+                        <input type="text" class="form-control" placeholder="Put title of news" name="title" id="inputTitleNews" [(ngModel)]="userarticle.title" ngModel required>
                       </div>
                       <div class="form-group addnews-block-form text-center">
                         <label class="label-edit"  for="inputTextNews">Text of news:</label>
-                        <textarea class="form-control" placeholder="Put text of news" name="lorem" id="inputTextNews" cols="3"  rows="3" ngModel required> </textarea>
+                        <textarea class="form-control" placeholder="Put text of news" name="lorem" id="inputTextNews" cols="3"  rows="3" [(ngModel)]="userarticle.lorem" ngModel required> </textarea>
                       </div>
                       <div class="form-group text-center">
-                        <button class="btn btn-success listing-button col-sm-12 btn-add-news" type="submit" data-test="submitForm">
+                        <button class="btn btn-success listing-button col-sm-12 btn-add-news" type="submit" data-test="submitForm" (click)="openDialog()">
                           Change news
                         </button>
                       </div>
