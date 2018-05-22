@@ -5,8 +5,10 @@
   color: white;
 }
 .socialItem {
-  float: left;
-  padding: 0 10px;
+  display:inline-block;
+  *display:inline; /*IE7*/
+  *zoom:1; /*IE7*/
+  margin-right:10px;
 }
 .fa-facebook-official {
    font-size: 30px;
@@ -29,4 +31,25 @@
 }
 .fa-linkedin:hover {
   color: orangered;
+}
+@media (min-width: 320px) {
+  .developer-block {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .fa-facebook-official {
+    font-size: 25px;
+  }
+  .fa-github {
+    font-size: 25px;
+  }
+  .fa-linkedin {
+    font-size: 25px;
+  }
+}
+@media (min-width: 576px) {
+  .developer-block {
+    text-align: center;
+    padding: 20px 0;
+  }
 }
